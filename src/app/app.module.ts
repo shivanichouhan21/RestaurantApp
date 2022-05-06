@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,9 +22,9 @@ import { TESTIMONIALSComponent } from './testimonials/testimonials.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { TopbarComponent } from './topbar/topbar.component';
 // import { MDBBootstrapModule } from 'angular-bootstrap-md';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,11 +42,9 @@ import { TopbarComponent } from './topbar/topbar.component';
     TESTIMONIALSComponent,
     ContactUsComponent,
     FooterComponent,
-    HeaderComponent,
-    TopbarComponent
-  ],
-  imports: [
-    BrowserModule,
+    HeaderComponent  ],
+  imports: [HttpModule,HttpClientModule,ReactiveFormsModule,FormsModule,ToastrModule.forRoot(),BrowserAnimationsModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     // MDBBootstrapModule.forRoot()
   ],
