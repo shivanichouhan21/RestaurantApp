@@ -12,7 +12,7 @@
     "serve:ssr": "node dist/Restaurant/server/main.js",
     "build:ssr": "ng build && ng run Restaurant:server",
     "prerender": "ng run Restaurant:prerender",
-    "start:heroku": "node dist/server"
+    "start:heroku": "node dist/Restaurant/server"
   },
   "private": true,
   "dependencies": {
