@@ -1,4 +1,4 @@
-import { Menu } from './menu';
+import { Gallery } from './gallery';
 // import { UserFilter } from './User-filter';
 import { Injectable } from '@angular/core';
 import { EMPTY, Observable } from 'rxjs';
@@ -7,17 +7,18 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class MenuService {
-  menuList: Menu[] = [];
+export class GalleryService {
+  Gallery: Gallery[] = [];
   constructor(private http: HttpClient) { }
 
 
-
+  
   load(): void {
     this.find().subscribe(result => {
       console.log(result,"jjjjjjjj");
         let data =  result
-        this.menuList =data
+        this.Gallery =data
+        console.log( this.Gallery ," this.Gallery  this.Gallery ")
       },
       err => {
         console.error('error loading', err);
@@ -25,11 +26,10 @@ export class MenuService {
     );
   }
 
-  find(): Observable<Menu[]> {
-    const url = `http://localhost:3200/dish/list_menu`;
+  find(): Observable<Gallery[]> {
+    const url = `http://localhost:3200/gallery/galleryList`;
     const headers = new HttpHeaders().set('Accept', 'application/json');
 
-    return this.http.get<Menu[]>(url, {headers});
+    return this.http.get<Gallery[]>(url, {headers});
   }
-
 }

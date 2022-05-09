@@ -19,7 +19,6 @@ export class EventsService {
       console.log(result,"jjjjjjjj");
         let data =  result
         this.Events =data
-        console.log( this.Events ," this.flightList  this.flightList ")
       },
       err => {
         console.error('error loading', err);
@@ -32,4 +31,7 @@ export class EventsService {
     const headers = new HttpHeaders().set('Accept', 'application/json');
 
     return this.http.get<Event[]>(url, {headers});
-  }}
+  }
+
+
+}
