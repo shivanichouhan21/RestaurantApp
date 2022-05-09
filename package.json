@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "ng run Restaurant:serve-ssr",
-    "build": "ng run Restaurant:server",
+    "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "postinstall": "ng build --configuration=production",
