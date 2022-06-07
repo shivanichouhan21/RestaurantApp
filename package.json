@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node --optimize_for_size --max_old_space_size=460 dist/Restaurant/server/main.js",
+    "start": "ng serve",
     "build": "ng build --prod",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "c test",
     "postinstall": "npm run build:ssr",
     "dev:ssr": "ng run Restaurant:serve-ssr",
     "serve:ssr": "node dist/Restaurant/server/main.js",
