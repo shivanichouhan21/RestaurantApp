@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
-
-
+import { MatTableDataSource } from '@angular/material/table'
+import {OrderNowComponent} from "./order-now/order-now.component"
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -22,32 +22,39 @@ import { TESTIMONIALSComponent } from './testimonials/testimonials.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-// import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { PaymentComponent } from './payment/payment.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { MatTableModule } from '@angular/material/table'  
+import {CartComponent} from '../app/cart/cart.component'
+import {FailurePageComponent} from '../app/failure-page/failure-page.component'
+import {SuccessPageComponent} from '../app/success-page/success-page.component'
+
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent,CartComponent,SuccessPageComponent,
     SidebarComponent,
     BackgroundComponent,
     HomeComponent,
     AboutUsComponent,
-    MenuComponent,
+    MenuComponent,FailurePageComponent,
     WhyUsComponent,
     SpecialsComponent,
     EventsComponent,
     ChefsComponent,
     GALLERYComponent,
     BookTableComponent,
-    TESTIMONIALSComponent,
+    TESTIMONIALSComponent,PaymentComponent,OrderNowComponent,
     ContactUsComponent,
     FooterComponent,
     HeaderComponent  ],
   imports: [HttpModule,HttpClientModule,ReactiveFormsModule,FormsModule,ToastrModule.forRoot(),BrowserAnimationsModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    AppRoutingModule,
+    AppRoutingModule,MatTableModule
     // MDBBootstrapModule.forRoot()
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+,
   providers: [],
   bootstrap: [AppComponent]
 })

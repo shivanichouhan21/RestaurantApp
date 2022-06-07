@@ -1,0 +1,59 @@
+<div class="section-titles">
+    <div class="container">
+        <div class="row justify-content-start">
+            <div *ngFor="let item of Order" class="col-sm-6">
+                 <input type="checkbox" [value]="item.dishId"  class="checkInput"
+                (change)="changeCheckbox($event,item)">
+                <br>
+                <div><div class="txtSize"></div> 
+                    <span class="imageClas">
+                        <img
+                            [src]="item.dish_image">
+                        <!-- <button class="btn">  ADD</button> -->
+                        <!-- <ng-template> -->
+                            <!-- <button id="down" class="btn btn-defaults newADDD" (click)="down(1)"><span
+                                    class="glyphicon glyphicon-minus"></span></button>
+                            <input style="color: black; width: 100px;margin: auto;" type="text" id="myNumber"
+                                class="form-control input-number" [(ngModel)]="quantity" />
+                            <span></span>
+                            <button id="up" class="btn btn-default newPlus" (click)="up(10)"><span
+                                    class="glyphicon glyphicon-plus"></span></button> -->
+                        <!-- </ng-template> -->
+                    </span></div>
+                <p>
+                    <span class="required-asterisk">✩</span> Bestseller
+                </p>
+                <h3>{{item.dish_name}}</h3>
+                <h4>price Rs.{{item.price}}</h4>
+                <h5>{{item.description}}</h5>
+            </div>
+           
+           
+
+
+        </div>
+        <div class="mx-auto" style="width: 200px;">
+            <button class="btn" (click)="addCart()"> View Order {{quantity}} and Price Rs {{price}} </button></div>
+        
+    </div>
+   
+</div>
+
+<!-- <div class="container">
+    <h1>Angular CheckBox Example - Tutsmake.com</h1>
+         
+    <form [formGroup]="form" (ngSubmit)="submit()">
+             
+        <div class="form-group">
+            <label for="website">Website:</label>
+            <div *ngFor="let web of websiteList">
+              <label>
+                <input type="checkbox" [value]="web.id" (change)="onCheckboxChange($event)" />
+                {{web.name}}
+              </label>
+            </div>
+        </div>
+         
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+</div> -->
